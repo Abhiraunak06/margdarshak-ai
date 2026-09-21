@@ -92,6 +92,17 @@ def download_project_report_docx():
         )
     raise HTTPException(status_code=404, detail="Project report Word document not found.")
 
+@app.get("/api/download/prompt-journal")
+def download_prompt_journal_docx():
+    doc_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Margdarshak_AI_Prompt_Journal.docx")
+    if os.path.exists(doc_path):
+        return FileResponse(
+            doc_path,
+            media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            filename="Margdarshak_AI_Prompt_Journal.docx"
+        )
+    raise HTTPException(status_code=404, detail="Prompt journal Word document not found.")
+
 # Mount built production frontend on root so http://localhost:8000/ and http://127.0.0.1:8000/ serve the full React application
 frontend_dist = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "frontend", "dist")
 if os.path.exists(frontend_dist):
