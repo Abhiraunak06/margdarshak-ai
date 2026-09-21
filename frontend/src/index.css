@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900;
+  }
+}
+
+/* Custom iridescent atmospheric mesh background */
+.bg-iridescent-mesh {
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(254, 205, 211, 0.4) 0px, transparent 45%),
+    radial-gradient(at 85% 12%, rgba(224, 231, 255, 0.5) 0px, transparent 50%),
+    radial-gradient(at 50% 35%, rgba(243, 232, 255, 0.45) 0px, transparent 60%),
+    radial-gradient(at 80% 75%, rgba(207, 250, 254, 0.4) 0px, transparent 50%),
+    radial-gradient(at 20% 85%, rgba(254, 240, 138, 0.25) 0px, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Frosted glass container */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 20px 70px -15px rgba(0, 0, 0, 0.05), 0 0 1px 1px rgba(255, 255, 255, 0.9) inset;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(199, 210, 254, 0.8);
+  box-shadow: 0 15px 40px -10px rgba(99, 102, 241, 0.1);
+}
+
+/* Chromatic iridescent border wrapper */
+.chromatic-border {
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.5), rgba(168, 85, 247, 0.5), rgba(56, 189, 248, 0.5));
+  padding: 1.5px;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 35px -10px rgba(168, 85, 247, 0.15);
+}
+
+/* Smooth custom scrollbars */
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
